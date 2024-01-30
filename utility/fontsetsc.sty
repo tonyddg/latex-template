@@ -1,0 +1,71 @@
+% 简体中文字体方案选择
+% 思源与 noto 方案中, 使用常规简体中文字体与粗体, 伪斜体
+% 方正方案中, 使用常规字体与伪粗体, 伪斜体
+% 思源字体下载 https://github.com/adobe-fonts
+% noto 字体下载 https://github.com/notofonts/noto-cjk/tree/main
+
+\ProvidesPackage{utility/fontsetsc}
+
+\RequirePackage[fontset=none]{ctex} % 中文字体         
+\RequirePackage{kvoptions}          % 文档类选项
+\RequirePackage{xstring}            % 字符串处理
+
+\SetupKeyvalOptions {
+    family=fontsetsc,
+    prefix=fontsetsc@,
+    setkeys=\setkeys
+}
+% 基本字体方案
+\DeclareStringOption[source]{fontset}
+% 启用方正楷体
+\DeclareVoidOption{fzkt}{
+    \setCJKfamilyfont{zhkai}{FZKTK.TTF}[AutoFakeBold, AutoFakeSlant]%
+    \newcommand{\kaishu}{\CJKfamily{zhkai}}%
+}
+
+\ProcessKeyvalOptions*
+
+\IfStrEqCase{\fontsetsc@fontset}{%
+    {source}{% Adobe 思源字体方案
+        \setCJKfamilyfont{zhsong}{SourceHanSerifSC-Regular.otf}[BoldFont=SourceHanSerifSC-SemiBold.otf, AutoFakeSlant]%
+        \setCJKmainfont{SourceHanSerifSC-Regular.otf}[BoldFont=SourceHanSerifSC-SemiBold.otf, AutoFakeSlant]%
+        \newcommand{\songti}{\CJKfamily{zhsong}}%
+
+        \setCJKfamilyfont{zhhei}{SourceHanSansCN-Regular.otf}[BoldFont=SourceHanSansCN-Bold.otf, AutoFakeSlant]%
+        \setCJKsansfont{SourceHanSansCN-Regular.otf}[BoldFont=SourceHanSansCN-Bold.otf, AutoFakeSlant]%
+        \newcommand{\heiti}{\CJKfamily{zhhei}}%
+
+        \setCJKfamilyfont{zhmono}{SourceHanMonoSC-Regular.otf}[BoldFont=SourceHanMonoSC-Bold.otf, AutoFakeSlant]%
+        \setCJKmonofont{SourceHanMonoSC-Regular.otf}[BoldFont=SourceHanMonoSC-Bold.otf, AutoFakeSlant]%
+        \newcommand{\dengkuan}{\CJKfamily{zhmono}}%
+    } 
+    {noto}{% Google noto 字体方案
+        \setCJKfamilyfont{zhsong}{NotoSerifCJKsc-Regular.otf}[BoldFont=NotoSerifCJKsc-SemiBold.otf, AutoFakeSlant]%
+        \setCJKmainfont{NotoSerifCJKsc-Regular.otf}[BoldFont=NotoSerifCJKsc-SemiBold.otf, AutoFakeSlant]%
+        \newcommand{\songti}{\CJKfamily{zhsong}}%
+
+        \setCJKfamilyfont{zhhei}{NotoSansCJKsc-Regular.otf}[BoldFont=NotoSansCJKsc-Bold.otf, AutoFakeSlant]%
+        \setCJKsansfont{NotoSansCJKsc-Regular.otf}[BoldFont=NotoSansCJKsc-Bold.otf, AutoFakeSlant]%
+        \newcommand{\heiti}{\CJKfamily{zhhei}}%
+
+        \setCJKfamilyfont{zhmono}{NotoSansCJKsc-Regular.otf}[BoldFont=NotoSansCJKsc-Bold.otf, AutoFakeSlant]%
+        \setCJKmonofont{NotoSansCJKsc-Regular.otf}[BoldFont=NotoSansCJKsc-Bold.otf, AutoFakeSlant]%
+        \newcommand{\dengkuan}{\CJKfamily{zhmono}}%
+    }
+    {fz}{% 方正字体方案
+        \setCJKfamilyfont{zhsong}{FZSSK.TTF}[AutoFakeBold, AutoFakeSlant]%
+        \setCJKmainfont{FZSSK.TTF}[AutoFakeBold, AutoFakeSlant]%
+        \newcommand{\songti}{\CJKfamily{zhsong}}%
+
+        \setCJKfamilyfont{zhhei}{FZHTK.TTF}[AutoFakeBold, AutoFakeSlant]%
+        \setCJKsansfont{FZHTK.TTF}[AutoFakeBold, AutoFakeSlant]%
+        \newcommand{\heiti}{\CJKfamily{zhhei}}%
+        % 使用方正楷体字体
+        \setCJKfamilyfont{zhmono}{FZKTK.TTF}[AutoFakeBold, AutoFakeSlant]%
+        \setCJKmonofont{FZKTK.TTF}[AutoFakeBold, AutoFakeSlant]%
+        \newcommand{\dengkuan}{\CJKfamily{zhmono}}%
+    }
+    {none}{
+    }
+}
+

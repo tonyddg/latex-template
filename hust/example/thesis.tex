@@ -1,0 +1,62 @@
+% 请复制到仓库根目录下编译
+
+\documentclass[thesis,plan=hgp,doctitle=华中科技大学毕业设计]{hust/hust}
+
+\usepackage{hust/cover}
+
+\begin{document}
+
+%=============== 封面 ================%
+
+% 封面主标题
+\renewcommand{\headCover}{本科生毕业设计}
+
+% 院系名称
+\renewcommand{\collegeCover}{XX学院}
+% 专业班级
+\renewcommand{\classCover}{XX 2222}
+% 作者
+\renewcommand{\authorCover}{XXX}
+% 学号
+\renewcommand{\numberCover}{UXXXXXXXXX}
+% 指导教师
+\renewcommand{\teacherCover}{XXX}
+
+% 年
+\renewcommand{\yearCover}{2024}
+% 月
+\renewcommand{\monthCover}{1}
+% 日
+\renewcommand{\dayCover}{30}
+
+\makecover
+
+% 保密页
+
+\coverEnd
+
+%=============== 正文 ================%
+
+% 摘要
+\include{hust/example/abs}
+
+\clearpage
+
+\tableofcontents
+
+% 第一节
+\include{hust/example/sec1}
+
+% 第二节
+\include{hust/example/sec2}
+
+% 致谢
+\include{hust/example/ack}
+
+% 参考文献
+\reference{res/test.bib}
+
+% 附录
+\include{hust/example/appendix}
+
+\end{document}

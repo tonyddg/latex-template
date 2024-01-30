@@ -1,0 +1,58 @@
+\ProvidesPackage{hust/pkgs}
+
+%=============== 字体 ================%
+
+% 中文支持
+\RequirePackage[fontset=none,zihao=-4,UTF8,heading=true]{ctex}
+
+% 西文字体设置
+\usepackage{newtxmath}          % 数学字体
+\usepackage[t1]{sourceserifpro} % 有衬线字体
+\usepackage{DejaVuSans}         % 无衬线字体
+\usepackage{DejaVuSansMono}     % 等宽字体
+
+%=============== 页面 ================%
+
+\RequirePackage{geometry}       % 设置页面边距 (geometry)
+\RequirePackage{fancyhdr}       % 设置页眉页脚
+\RequirePackage{setspace}       % 设置行间距 (\setstretch)
+\RequirePackage{newclude}       % 阻止自动分页 (\include*)
+\RequirePackage{titlesec}       % 标题格式
+
+%============= 表格图片 ==============%
+
+\RequirePackage{array}          % 表格宏包
+\RequirePackage{makecell}       % 表格宏包
+\RequirePackage{graphicx}       % 引用图片
+\RequirePackage{subfigure}      % 子图片
+\RequirePackage{pdfpages}       % 引用pdf
+
+%=============== 命令 ================%
+
+\RequirePackage{xparse}         % 灵活命令
+\RequirePackage{xstring}        % 字符串处理
+\RequirePackage{xifthen}        % 字符串处理
+\RequirePackage{kvoptions}      % 文档类选项
+
+%=============== 样式 ================%
+
+\RequirePackage[subfigure]{tocloft} % 定制目录样式 (使用选项防止与 subfigure 宏包冲突)
+\RequirePackage{caption}            % 设置浮动体题目 (\captionsetup)
+\RequirePackage{enumitem}           % 自定义列表
+
+%=============== 数学 ================%
+
+% \RequirePackage{amsthm}           % 不使用定理环境
+\RequirePackage{amsmath}            % 公式基础
+
+\let\Bbbk\relax                     % 解决与 newtxmath 的冲突
+\RequirePackage{amssymb}            % 符号
+\RequirePackage{bm}                 % 数学公式中的黑斜体
+
+%=============== 杂项 ================%
+
+\RequirePackage{ulem}               % 更好的下划线
+\RequirePackage{xcolor}             % 颜色基础
+\RequirePackage{hyperref}           % 引用
+\RequirePackage{listings}           % 代码环境
+\RequirePackage{gbt7714}            % 参考文献格式

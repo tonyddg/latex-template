@@ -1,0 +1,24 @@
+% 附录
+
+\intoappendix
+
+\section{部分测试}
+\subsection{代码测试}
+\begin{lstlisting}[language=c++, caption=测试代码, label=lst:test]
+#include <iostream>
+int main()
+// 中文测试
+{
+    std::cout << "Hello World" << std::endl;
+    return 0;
+}
+\end{lstlisting}
+
+\subsection{引用测试}
+\begin{enumerate}
+    \item \autoref{lst:test}
+    \item \autoref{fig:test}
+    \item \autoref{sec:test}
+    \item \autoref{tab:test}
+    \item \autoref{equ:test}
+\end{enumerate}
