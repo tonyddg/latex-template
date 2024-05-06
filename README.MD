@@ -24,6 +24,17 @@ Citation: Backend: bibtex
 },
 ```
 
+## 使用方法
+使用模板中的例子编译时
+* 将模板移动到仓库根目录下
+* 将模板的主文件重命名为 `main.tex`
+* 在 `main.tex` 第一句添加 `%!TEX root = ./main.tex`
+
+自行使用模板时
+* 将模板文件夹与 `utility` 文件夹复制到工作目录下
+* 在工作目录的根目录下编写 `main.tex`, 调用模板
+* 在 `main.tex` 第一句添加 `%!TEX root = ./main.tex`
+
 ## 已有模板
 * [华中科技大学非官方论文模板](./hust/README.MD)
 
