@@ -224,7 +224,16 @@
 
 \setcounter{tocdepth}{2}
 \tocloftpagestyle{fancy}
-\renewcommand{\cfttoctitlefont}{\hfill\bfseries\zihao{-2}}
+
+\IfStrEqCase{\HUST@plan}{
+    {pst}{
+        \renewcommand{\cfttoctitlefont}{\sffamily\hfill\bfseries\zihao{-2}}
+    }
+    {hgp}{
+        \renewcommand{\cfttoctitlefont}{\hfill\bfseries\zihao{-2}}
+    }
+}
+
 \renewcommand{\contentsname}{目\hspace{1em}录}
 \renewcommand{\cftaftertoctitle}{\hfill}
 \renewcommand{\cftafterloftitleskip}{12pt}
@@ -269,7 +278,7 @@
 
 \NewDocumentCommand\reference{m}{
     \clearpage
-    \bibliography{m}
+    \bibliography{#1}
     \addcontentsline{toc}{section}{参考文献}
 }
 
