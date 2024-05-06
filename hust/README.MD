@@ -1,4 +1,5 @@
 # 华中科技大学非官方论文模板
+来自模板库 <https://github.com/tonyddg/latex-template>  
 提供文档类 `hust/hust` 与封面宏包 `hust/cover`
 
 参考自模板 <https://github.com/SukunaShinmyoumaru-hust/Hust-undergraduate-thesis>
@@ -70,12 +71,16 @@ The definition of \label has changed!
 注意
 * `thesis` 类型的文档不需要次标题
 * `proposal` 类型的文档主标题默认可换行, 若不换行需要在末尾添加 `\\\;`
+* 除了以上方式, 也可通过命令 `\makecover` 的参数或重定义宏 `\defaultCoverHeader`, `\defaultCoverInfo` 与 `\defaultFootData` 进一步调整封面样式
 
 ### 提供命令
-* `\makecover{O}` 生成基本封面
+* `\makecover` 生成基本封面
     * 参数为文档类型, 默认参数为文档类的模板类型
 * `\coverEnd` 进入正文    
 在 `\makecover` 命令后, 可使用 `\includepdf` 插入要求页, 插入后使用该命令进入正文
+* `\defaultCoverHeader` 默认的封面标题样式
+* `\defaultCoverInfo` 默认信息栏样式
+* `\defaultFootData` 默认日期栏样式
 
 ## 文件结构
 * example 使用示例
